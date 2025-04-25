@@ -5,7 +5,7 @@
 
 Azure Network Security Group (NSG): Agrega una regla de entrada para TCP 1433.
 
-Firewall de Windows: Agrega una regla de entrada para permitir TCP en el puerto 1433.
+Firewall de Windows: Agrega una regla de entrada para permitir TCP en el puerto 1433. 
 
 ### 2. Verificar que SQL Server acepte conexiones externas
    Abre SQL Server Configuration Manager en la VM.
@@ -34,13 +34,15 @@ Copia por RDP si es Windows.
 
 
 ### 5. Crear el archivo .env
-   En la raíz del proyecto, crea un archivo llamado .env con:
+   En la raíz del proyecto, edita el archivo llamado .env para llenar tus datos con
 DB_USER=nombreUsuario
 DB_PASS=contraseña
 DB_HOST=IP_DE_TU_SQL_SERVER
 DB_PORT=1433
 DB_NAME=nombreBase
 PORT=3000
+*OJO QUE SI TE LOGUEAS AL SQL SERVER CON WINDOWS AUTHENTICATION, NO VA A SERVIR. TIENES QUE LOGUEARTE UNA CUENTA CON CREDENCIALES DE SQL, CREO QUE DANDOLE AL + EN LA BASE DE DATOS, SE DESPLIEGAN TABLAS Y COSAS, ENTRE ELLAS UNA DICE LOGIN
+EN LOGIN, LE DAS CLIC DERECHO Y CREAS UN NUEVO USUARIO. 
 ### 6. Instalar dependencias
    En la terminal, dentro del proyecto:
 npm install
